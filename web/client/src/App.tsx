@@ -1,10 +1,17 @@
 import React from 'react';
-function App() {
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
+import LandingPage from './pages/landingPage';
+
+const router = createBrowserRouter([
+  {path: "/", element: <LandingPage/>},
+])
+
+
+const App = () => {
   return (
-    <div className = "bg-red-500">
-      <h1 className = "">Test</h1> 
-    </div>
+    <RouterProvider router ={router}/>
   );
 }
+  export default App;
 
-export default App;
+
