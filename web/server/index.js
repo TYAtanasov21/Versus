@@ -2,12 +2,16 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import pgk from "pg";
-
+import { TextAnalyticsClient, AzureKeyCredential } from '@azure/ai-text-analytics';
 import testRoute from "./routes/testRoute.js";
 
 
+
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
+const endpoint = 'https://versusai6276601461.openai.azure.com/';
+const apiKey = '9ba8d4a324444afe8948e4508d4a063a';
+const textAnalyticsClient = new TextAnalyticsClient(endpoint, new AzureKeyCredential(apiKey));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,6 +19,18 @@ app.use(cors());
 
 app.use("/", testRoute);
 
+
+app.post('/analyzeText', async (req, res) => {
+    const { text } = req.body;
+    
+    try {
+        const sentimentAnalysis = await textAnalyticsClient.analyzeSentiment([text]);
+        res.json(sentimentAnalysis);
+    } catch (error) {
+        console.error('Error analyzing text:', error);
+        res.status(500).json({ error: 'An error occurred while analyzing text' });
+    }
+});
 
 app.listen(PORT, ()=>{
     console.log(`Server running on port ${PORT}`);
