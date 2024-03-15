@@ -1,12 +1,11 @@
 import React from "react";
 import Footer from "../components/footer";
 import TopBar from "../components/topBar";
+import { useNavigate } from 'react-router-dom';
+
+
 const LandingPage: React.FC = () => {
-
-    const handleChatNow = () => {
-
-    }
-
+    const navigate = useNavigate();
     return (
         <div className = "bg-gradient-to-b from-sky-900 to-sky-800 pl-16">
                 <TopBar/>
@@ -17,14 +16,14 @@ const LandingPage: React.FC = () => {
                         <div>
                         <button
                         className = "bg-sky-600 px-9 py-2 text-gray-100 rounded-3xl font-extrabold"
-                        onClick = {handleChatNow}
+                        onClick = {() => {navigate('/SignIn')}}
                         >
                             CHAT NOW
                         </button>
 
                         <button
                         className = "px-9 py-2 text-indigo-300 rounded-3xl ml-10 outline font-extrabold"
-                        onClick = {handleChatNow}
+                        onClick = {() => {navigate('/SignIn')}}
                         >
                             VERSUS AI
                         </button>
@@ -45,7 +44,7 @@ const LandingPage: React.FC = () => {
                     <p className = "text-white pt-5 pb-10 leading-5 text-center text-lg">Our AI tirelessly works behind the scenes,<br/> filtering out hateful words and harmful<br/> content, so you can enjoy genuine human<br/>connection.</p>
                     <button
                     className = "bg-sky-700 px-5 py-2 mt-1 text-gray-100 rounded-3xl font-extrabold items-center"
-                    onClick = {handleChatNow}
+                    onClick = {() => {navigate('/SignIn')}}
                     >
                         TRY NOW
                     </button>
