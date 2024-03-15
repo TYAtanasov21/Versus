@@ -78,7 +78,7 @@ router.post("/register", async (req, res) =>{
     }
 });
 
-router.get("/getUserByEmailAndPassword", async (req, res)=>{
+router.get("/signIn", async (req, res)=>{
     const client = await pool.connect();
     console.log("Connected to database successfully");
     try{
@@ -90,22 +90,24 @@ router.get("/getUserByEmailAndPassword", async (req, res)=>{
         if (userData) {
             const isPasswordMatch = await bcrypt.compare(request.password, userData.password);
             if (isPasswordMatch) {
-                res.status(200).json({ user: userData, message: "User authenticated successfully" });
+                res.status(200).json({ user: userData, message: "User authenticated successfully", successful: true });
                 console.log(`User (${userData.username}) authenticated successfully`);
             } else {
-                res.status(200).json({ message: "Incorrect password" });
+                res.status(200).json({ message: "Incorrect password", successful: false});
                 console.log("Incorrect password");
             }
         } else {
-            res.status(200).json({ message: "User not found" });
+            res.status(200).json({ message: "User not found", successful: false });
             console.log("User not found");
         }
     } catch (error) {
         console.log(`Error trying to retrieve user: ${error}`);
-        res.status(500).json({ user: [], message: "Failed to retrieve user" });
+        res.status(500).json({ user: [], message: "Failed to retrieve user", successful: false });
     } finally {
         client.release();
     }
 });
+
+
 
 export default router;
