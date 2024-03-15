@@ -80,26 +80,31 @@ router.post("/register", async (req, res) =>{
 
 router.get("/getUserByEmailAndPassword", async (req, res)=>{
     const client = await pool.connect();
-    console.log("Connected to database sucessfully");
+    console.log("Connected to database successfully");
     try{
         const request = req.query;
-        const hashedPassword = await bcrypt.hash(request.password, SALT_ROUNDS);
-        console.log(hashedPassword);
-        const query = "SELECT * FROM users WHERE email = $1 AND password = $2";
-        const response = await client.query(query, [request.email, hashedPassword]);
-        const data = response.rows[0];
-        if(response.rows.length != 0){
-            res.status(200).json({user: data, message: "Retrieved user"});
-            console.log(`Retrieved user(${data}) from database`);
+        const query = "SELECT * FROM users WHERE email = $1";
+        const response = await client.query(query, [request.email]);
+        const userData = response.rows[0];
+        
+        if (userData) {
+            const isPasswordMatch = await bcrypt.compare(request.password, userData.password);
+            if (isPasswordMatch) {
+                res.status(200).json({ user: userData, message: "User authenticated successfully" });
+                console.log(`User (${userData.username}) authenticated successfully`);
+            } else {
+                res.status(200).json({ message: "Incorrect password" });
+                console.log("Incorrect password");
+            }
+        } else {
+            res.status(200).json({ message: "User not found" });
+            console.log("User not found");
         }
-        else {
-            res.status(200).json({message: "This user does not exist"});
-            console.log(`User does not exist`);
-        }
-    }
-    catch(error) {
-        console.log(`Error trying to retrive user: ${error}`);
-        res.status(500).json({user: [], message: "Failed to retrieve user"});
+    } catch (error) {
+        console.log(`Error trying to retrieve user: ${error}`);
+        res.status(500).json({ user: [], message: "Failed to retrieve user" });
+    } finally {
+        client.release();
     }
 });
 
