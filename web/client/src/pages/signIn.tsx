@@ -26,9 +26,11 @@ export default function SignIn() {
     try {
       const url = `http://localhost:3001/user/signIn?email=${email}&password=${password}`;
       const response = await axios.get(url);
-      console.log(response);
+      console.log(response.data.sucessful);
       console.log(response.data.message);
-      if (response.data.success) {
+      if (response.data.successful) {
+        console.log(response.data.user);
+        navigate('/mainApp', { state: { user: response.data.user } });
       } else {
         setErrorMessage("Wrong email or password");
       }
