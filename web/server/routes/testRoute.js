@@ -17,19 +17,19 @@ const pool = new Pool({
 
 const test = async () => {
     try {
-        const client = await pool.connect(); // Use pool.connect() instead of just pool()
+        const client = await pool.connect(); 
         console.log("Connected to database!");
         console.log(await client.query("SELECT * FROM users"));
         
-        client.release(); // Remember to release the client back to the pool when done
+        client.release(); 
     } catch (error) {
-        console.log("Error connecting to database:", error); // Log the actual error
+        console.log("Error connecting to database:", error); 
     }
 };
 
 router.get("/helloWorld", (req, res) => {
     test();
-    res.send("Testing database connection..."); // Send a response back to the client
+    res.send("Testing database connection..."); 
 });
 
 export default router;

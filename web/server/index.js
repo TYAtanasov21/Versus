@@ -21,7 +21,7 @@ const pool = new Pool({
 
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const endpoint = 'https://versusai6276601461.openai.azure.com/';
 const apiKey = '9ba8d4a324444afe8948e4508d4a063a';
 const textAnalyticsClient = new TextAnalyticsClient(endpoint, new AzureKeyCredential(apiKey));

@@ -25,14 +25,12 @@ export default function SignIn() {
   const sendData = async () => {
     try {
       const user = { email: email, password: password };
-      const response = await axios.post(
-        "https://alto-server.vercel.app/auth/signIn",
-        user
-      );
-
-      if (response.data.signedIn) {
-        const { email, password } = user;
-        navigate("/UI Files/mainApp", { state: { user: { email, password } } });
+      const url = `http://localhost:3001/user/signIn?email=${email}&password=${password}`;
+      const response = await axios.get(url);
+      console.log(response);
+      console.log(response.data.message);
+      if (response.data.success) {
+        // navigate("/UI Files/mainApp", {user: response.data.user});
       } else {
         setErrorMessage("Wrong email or password");
       }
