@@ -48,6 +48,17 @@ const emailAvalability = async (email) => {
     }
 };
 
+const getUser = async (client ,email, hashedPassword) =>{
+    try{
+    const query = "SELECT * FROM users WHERE email = $1 AND password = $2";
+    const response = await client.query(query, [email, hashedPassword]);
+    return response.rows[0];
+    }
+    catch(error){
+        console.log("Error getting user: ", error);
+    }
+};
+
 
 router.post("/register", async (req, res) =>{
     const client = await pool.connect();
@@ -58,8 +69,8 @@ router.post("/register", async (req, res) =>{
             const hashedPassword = await bcrypt.hash(request.password, SALT_ROUNDS);
             const query = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
             const response = await client.query(query, [request.username, request.email, hashedPassword]);
-            res.status(200).json({registration_code: 1});
-            console.log("User has been added");
+            const user = await getUser(client, request.email, hashedPassword);
+            res.status(200).json({registration_code: 1, user: user});
         }
         else{
             if(!await usernameAvalability(request.username)){
