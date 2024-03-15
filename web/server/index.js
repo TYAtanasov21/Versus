@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import pgk from "pg";
 import { TextAnalyticsClient, AzureKeyCredential } from '@azure/ai-text-analytics';
-import testRoute from "./routes/testRoute.js";
+import userRoute from "./routes/userRoute.js";
 
 
 const {Pool} = pgk;
@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-app.use("/", testRoute);
+app.use("/user", userRoute);
 
 
 app.post('/analyzeText', async (req, res) => {
