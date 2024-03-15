@@ -64,20 +64,21 @@ router.post("/register", async (req, res) =>{
     const client = await pool.connect();
     console.log("Connected to database sucessfully");
     try{
-        const request = req.query;
+        const request = req.body;
         if(await usernameAvalability(request.username) && await emailAvalability(request.email)){
             const hashedPassword = await bcrypt.hash(request.password, SALT_ROUNDS);
             const query = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
-            const response = await client.query(query, [request.username, request.email, hashedPassword]);
+            await client.query(query, [request.username, request.email, hashedPassword]);
             const user = await getUser(client, request.email, hashedPassword);
-            res.status(200).json({registration_code: 1, user: user});
+            console.log(user);
+            res.status(200).json({registrationCode: 1, user: user});
         }
         else{
             if(!await usernameAvalability(request.username)){
-                res.status(200).json({registration_code: 2, message: "Username is already taken"});
+                res.status(200).json({registrationCode: 2, message: "Username is already taken"});
             }
             if(!await emailAvalability(request.email)){
-                res.status(200).json({registration_code: 3, message: "Email is already taken"});
+                res.status(200).json({registrationCode: 3, message: "Email is already taken"});
             }
         }
     }

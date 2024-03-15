@@ -27,25 +27,15 @@ export default function Register() {
 
   const sendData = async () => {
     try {
-      const user = { name: username, mail: email, pass: password };
-      const response = await axios.post("https://alto-server.vercel.app/auth/register", user);
-  
-      const code = response.data;
+      const response = await axios.post("http://localhost:3001/user/register", {username: username, email: email, password: password});
+      console.log(username, email, password);
+      const data = response.data;
+      const code = data.registrationCode;
 
       switch (code) {
         case 1:  
-          const request_user = {
-            email: email,
-            password: password
-          };
-  
-          const { data: registeredUserData } = await axios.post("https://alto-server.vercel.app/user/postUser", request_user);
-  
-          const userState = {
-            email: registeredUserData.email,
-          };
-  
-          navigate('/', { state: { user: userState } });
+          console.log(data.user);
+          navigate('/mainApp', { state: { user: data.user } });
           break;
         case 2:
           setErrorMessage("This username already exists");
