@@ -24,13 +24,11 @@ export default function SignIn() {
 
   const sendData = async () => {
     try {
-      const user = { email: email, password: password };
       const url = `http://localhost:3001/user/signIn?email=${email}&password=${password}`;
       const response = await axios.get(url);
       console.log(response);
       console.log(response.data.message);
       if (response.data.success) {
-        // navigate("/UI Files/mainApp", {user: response.data.user});
       } else {
         setErrorMessage("Wrong email or password");
       }
@@ -93,6 +91,15 @@ export default function SignIn() {
             Sign In &rarr;
             <BottomGradient />
           </button>
+          <div className = "flex flex-col">
+          <h3 className = "text-white text-center pt-4 font-medium">If you don't have an account create one here</h3>
+          <button
+          className="text-neutral-300 hover:text-neutral-400 underline font-medium transition-colors"
+          onClick={() => {navigate("/register")}}
+          >
+            Register
+          </button>
+          </div>
 
           <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
 
