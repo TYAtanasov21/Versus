@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const LandingPage: React.FC = () => {
     const navigate = useNavigate();
     return (
-        <div className = "bg-gradient-to-b from-sky-900 to-sky-800 pl-16 h-screen">
+        <div className = "bg-gradient-to-b from-sky-900 to-sky-800 pl-16">
                 <TopBar/>
                 <div className="flex flex-row pl-20 pr-20 justify-between items-center"> 
                     <div>
@@ -33,7 +33,7 @@ const LandingPage: React.FC = () => {
                         <img src = {require('../assets/message_icon.png')} alt = "message img" width = "300px"/>
                     </div>
                 </div>
-                <div className  = "flex flex-row pl-20 pr-20 justify-between items-center pt-16">
+                <div className  = "flex flex-row pl-20 pr-20 justify-between items-center pt-16 mb-10">
 
                     <div className = 'image ml-4'>
                         <img src = {require("../assets/AI_with_brain.png")} alt = "AI" width = "300px"/>
