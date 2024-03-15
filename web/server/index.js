@@ -6,6 +6,19 @@ import { TextAnalyticsClient, AzureKeyCredential } from '@azure/ai-text-analytic
 import testRoute from "./routes/testRoute.js";
 
 
+const {Pool} = pgk;
+
+
+const pool = new Pool({
+    host: 'aws-0-eu-central-1.pooler.supabase.com',
+    user: 'postgres.kacyodmycmfassvbecqb',
+    password: 'VersusAI_2024',
+    database: 'postgres',
+    port: 5432,
+    ssl: true,
+});
+
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
