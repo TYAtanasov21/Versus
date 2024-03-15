@@ -15,7 +15,8 @@
     "cors": "^2.8.5",
     "express": "^4.18.3",
     "pg": "^8.11.3",
-    "pgk": "^0.0.1-security"
+    "pgk": "^0.0.1-security",
+    "vercel": "^33.6.1"
   },
   "devDependencies": {
     "@azure/ai-text-analytics": "^5.1.0",
