@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const LandingPage: React.FC = () => {
     const navigate = useNavigate();
     return (
-        <div className = "bg-gradient-to-b from-sky-900 to-sky-800 pl-16">
+        <div className = "bg-gradient-to-b from-sky-900 to-sky-800 pl-16 h-screen">
                 <TopBar/>
                 <div className="flex flex-row pl-20 pr-20 justify-between items-center"> 
                     <div>
