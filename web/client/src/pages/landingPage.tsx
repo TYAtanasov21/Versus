@@ -15,14 +15,14 @@ const LandingPage: React.FC = () => {
                     <p className = "text-white pt-5 pb-10 leading-5 text-start text-lg font-sans">In a world of online negativity, be part of the solution,<br/> be part of a community that teenagers respectful dialogue.</p>
                     <div>
                     <button
-                    className = "bg-sky-600 px-9 py-2 text-gray-100 rounded-3xl font-extrabold"
+                    className = "bg-sky-600 px-9 py-2 text-gray-100 rounded-3xl font-extrabold font-sans"
                     onClick = {() => {navigate('/SignIn')}}
                     >
                         CHAT NOW
                     </button>
 
                     <button
-                    className = "px-9 py-2 text-indigo-300 rounded-3xl ml-10 outline font-extrabold"
+                    className = "px-9 py-2 text-indigo-300 rounded-3xl ml-10 outline font-extrabold font-sans"
                     onClick = {() => {navigate('/SignIn')}}
                     >
                         VERSUS AI
@@ -43,7 +43,7 @@ const LandingPage: React.FC = () => {
                 <h1 className = "text-4xl font-extrabold text-white text-center font-serif">With A Safe Built-In<br/> AI</h1>
                 <p className = "text-white pt-5 pb-10 leading-5 text-center text-lg font-sans">Our AI tirelessly works behind the scenes,<br/> filtering out hateful words and harmful<br/> content, so you can enjoy genuine human<br/>connection.</p>
                 <button
-                className = "bg-sky-700 px-5 py-2 mt-1 text-gray-100 rounded-3xl font-extrabold items-center"
+                className = "bg-sky-700 px-5 py-2 mt-1 text-gray-100 rounded-3xl font-extrabold items-center font-sans"
                 onClick = {() => {navigate('/SignIn')}}
                 >
                     TRY NOW
