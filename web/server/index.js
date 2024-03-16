@@ -5,7 +5,7 @@ import pgk from "pg";
 import { TextAnalyticsClient, AzureKeyCredential } from '@azure/ai-text-analytics';
 import userRoute from "./routes/userRoute.js";
 
-
+    
 const {Pool} = pgk;
 
 
