@@ -4,8 +4,11 @@ import { FaChevronLeft, FaChevronDown } from "react-icons/fa6";
 import CirclePhoto from './circlePhoto';
 import Member from './member';
 
+interface SidePannelProps {
+    username: string;
+}
 
-const SidePannel = () => {
+const SidePannel:React.FC<SidePannelProps> = ({username}) => {
     const [isPinnedExpand, setIsPinnedExpand] = useState(false);
     const [isGroupsExpand, setIsGroupsExpand] = useState(false);
     const [isConnectionsExpand, setIsConnectionExpand] = useState(false);
@@ -64,7 +67,7 @@ const SidePannel = () => {
                 <div className = "flex flex-row justify-start pt-2 pl-2">
                     <CirclePhoto image_url = {require("../assets/Alex-Kazakov.jpg")} size = {40} className = "text-green-400"/>
                     <div className = 'flex flex-col justify-start ml-5 font-sans text-gray-500 '>
-                    <h1 className='font-bold'>Teodor Madjarov</h1>
+                    <h1 className='font-bold'>{username}</h1>
                     <div className = "flex flex-row ">
                     <p className='font-serif font-large'>Status: </p>
                     <p className='text-green-500 pl-1 font-serif font-large'>Online</p>
