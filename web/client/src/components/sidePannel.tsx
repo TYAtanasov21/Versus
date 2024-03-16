@@ -12,6 +12,8 @@ const SidePannel:React.FC<SidePannelProps> = ({username}) => {
     const [isPinnedExpand, setIsPinnedExpand] = useState(false);
     const [isGroupsExpand, setIsGroupsExpand] = useState(false);
     const [isConnectionsExpand, setIsConnectionExpand] = useState(false);
+    const photoURL = `https://api.dicebear.com/7.x/initials/svg?seed=${username}`;
+
     return (
     <div className = "lg:basis-1/3 md:basis-1/4 bg-white h-screen outline text-black flex flex-col justify-between ">
         <div>
@@ -65,7 +67,7 @@ const SidePannel:React.FC<SidePannelProps> = ({username}) => {
             <div>
                 <Line color = "black"/>
                 <div className = "flex flex-row justify-start pt-2 pl-2">
-                    <CirclePhoto image_url = {require("../assets/Alex-Kazakov.jpg")} size = {40} className = "text-green-400"/>
+                    <CirclePhoto image_url = {photoURL} size = {40} className = "text-green-400"/>
                     <div className = 'flex flex-col justify-start ml-5 font-sans text-gray-500 '>
                     <h1 className='font-bold'>{username}</h1>
                     <div className = "flex flex-row ">
