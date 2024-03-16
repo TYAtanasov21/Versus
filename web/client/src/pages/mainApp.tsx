@@ -1,16 +1,22 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Line from '../components/line';
 import { FaChevronLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
 import SidePannel from '../components/sidePannel';
 import CirclePhoto from '../components/circlePhoto';
+import { useLocation } from "react-router-dom";
+
 
 const MainApp: React.FC = () =>{
     const [isChatting, setIsChatting] = useState(true);
-
+    const location = useLocation();
+    const [user, setUser] = useState(location.state.user);
+    useEffect(()=>{
+        console.log(user.username, typeof (user.username));
+    });
     return (  
         <div className = "flex flex-row">
-                <SidePannel/>
+                <SidePannel username={user.username}/>
             {!isChatting && 
             <div className = "flex flex-col bg-white mx-auto my-auto p-44 rounded-xl items-center font-sans text-gray-500 font-bold">
                     <h1>No Chats</h1>
@@ -21,7 +27,7 @@ const MainApp: React.FC = () =>{
                 <div className = "flex flex-col justify-start p-3">
                     <div className = "flex flex-row items-center mb-1">
                         <CirclePhoto image_url = {require("../assets/Alex-Kazakov.jpg")} size = {50} className = "mr-4 text-green-400"/>
-                    <h1 className='font-sans font-bold'>Teodor Madjarov</h1>
+                    <h1 className='font-sans font-bold'>{user.username}</h1>
                     </div>
                     <Line color = "black"/>
                 </div>
