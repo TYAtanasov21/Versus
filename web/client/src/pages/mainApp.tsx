@@ -10,7 +10,7 @@ const MainApp: React.FC = () =>{
     const [isChatting, setIsChatting] = useState(true);
     const location = useLocation();
     const user = location.state.user;
-    const photoURL = `https://api.dicebear.com/7.x/initials/svg?seed=${user.username}`;
+
     const [messageDraft, setMessageDraft] = useState<string>('');
     const [messages, setMessages] = useState<string[]>([]);
 

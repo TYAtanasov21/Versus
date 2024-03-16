@@ -14,7 +14,7 @@ const Group: React.FC<GroupProps> = ({group_name, count_of_users,}) => {
         <div className='flex flex-col'>
             <div className = "flex flex-row justify-between p-2">
                 <div className = "flex flex-row justify-start items-center">
-                <CirclePhoto image_url = {require("../assets/Apple_logo.png")} size = {40} className = "text-green-400"/>
+                <CirclePhoto image_url = {require("../assets/family.png")} size = {40} className = "text-green-400"/>
                     <div className = "flex flex-col justify-start pl-2">
                         <h1 className = "text-black font-sans font-bold text-md">{group_name}</h1>
                         <p className = "font-serif">{`${count_of_users} Members`}</p>

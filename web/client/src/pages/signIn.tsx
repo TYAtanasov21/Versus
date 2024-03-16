@@ -24,7 +24,7 @@ export default function SignIn() {
 
   const sendData = async () => {
     try {
-      const url = `http://localhost:3001/user/signIn?email=${email}&password=${password}`;
+      const url = `https://versus-server.vercel.app/user/signIn?email=${email}&password=${password}`;
       const response = await axios.get(url);
       console.log(response.data.sucessful);
       console.log(response.data.message);

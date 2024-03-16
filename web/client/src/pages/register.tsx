@@ -26,7 +26,7 @@ export default function Register() {
 
   const sendData = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/user/register", {username: username, email: email, password: password});
+      const response = await axios.post("https://versus-server.vercel.app/user/register", {username: username, email: email, password: password});
       console.log(username, email, password);
       const data = response.data;
       const code = data.registrationCode;
