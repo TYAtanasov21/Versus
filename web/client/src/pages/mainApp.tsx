@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {ChangeEvent, useEffect, useState} from 'react'
 import Line from '../components/line';
 import { FaArrowRight } from "react-icons/fa";
 import SidePannel from '../components/sidePannel';
@@ -10,6 +10,22 @@ const MainApp: React.FC = () =>{
     const location = useLocation();
     const [user, setUser] = useState(location.state.user);
     const photoURL = `https://api.dicebear.com/7.x/initials/svg?seed=${user.username}`;
+    const [messageDraft, setMessageDraft] = useState<string>('');
+    const [messages, setMessages] = useState<string[]>([]);
+
+    const handleInputChange = (event:ChangeEvent<HTMLInputElement>) => {
+        setMessageDraft(event.target.value);
+        console.log(messageDraft);
+    };
+
+    const handleSendClick = () => {
+        if (messageDraft.trim() !== '') {
+            setMessages([...messages, messageDraft]);
+            setMessageDraft('');
+        }
+    }
+
+
     useEffect(()=>{
         console.log(user.username, typeof (user.username));
     });
@@ -29,10 +45,13 @@ const MainApp: React.FC = () =>{
                     <h1 className='font-sans font-bold'>{user.username}</h1>
                     </div>
                     <Line color = "black"/>
-                </div>
+                        {messages.map((message, index) => (
+                            <div key={index}>{message}</div>
+                        ))}
+                    </div>
                 <div className = "p-4">
-                    <input className = "bg-gray-200 w-11/12 py-2 outline-none rounded-xl px-3" placeholder='Type a message...'></input>
-                    <button className = "ml-7 rounded-2xl bg-sky-400 px-4 py-2" type = "submit"><FaArrowRight/></button>
+                    <input onChange={handleInputChange} className = "bg-gray-200 w-11/12 py-2 outline-none rounded-xl px-3" placeholder='Type a message...' value={messageDraft}></input>
+                    <button onClick={handleSendClick}className = "ml-7 rounded-2xl bg-sky-400 px-4 py-2" type = "submit"><FaArrowRight/></button>
                 </div>
             </div>}
         </div>
