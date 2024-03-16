@@ -6,7 +6,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
     return (
-        <div className={`flex flex-row bg-sky-900 rounded-t-lg justify-between mr-16 ${className}`}>
+        <div className={`flex flex-row bg-sky-950 rounded-t-lg justify-between mr-16 ${className}`}>
             <div className="p-10">
                 <img src={require("../assets/versus_logo_white.png")} alt="logo" width="100px" />
             </div>
