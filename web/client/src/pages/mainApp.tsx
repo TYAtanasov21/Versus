@@ -45,21 +45,14 @@ const MainApp: React.FC = () =>{
                     <h1 className='font-sans font-bold'>{user.username}</h1>
                     </div>
                     <Line color = "black"/>
-<<<<<<< HEAD
                 </div>
                 <div className = "p-4 flex flex-row justify-center">
                     <input className = "bg-gray-200 w-11/12 py-2 outline-none rounded-xl px-3" placeholder='Type a message...'></input>
-                    <button className = "ml-5 rounded-2xl bg-sky-400 px-5 py-2 " type = "submit"> <IoSend color='white' size = "20px"/> </button>
-=======
+                    <button className = "ml-5 rounded-2xl bg-sky-400 px-5 py-2 " type = "submit"><IoSend color='white' size = "20px"/> </button>
                         {messages.map((message, index) => (
                             <div key={index}>{message}</div>
                         ))}
                     </div>
-                <div className = "p-4">
-                    <input onChange={handleInputChange} className = "bg-gray-200 w-11/12 py-2 outline-none rounded-xl px-3" placeholder='Type a message...' value={messageDraft}></input>
-                    <button onClick={handleSendClick}className = "ml-7 rounded-2xl bg-sky-400 px-4 py-2" type = "submit"><FaArrowRight/></button>
->>>>>>> 8ae397cc49750b48e10528414d911609fb24e6ad
-                </div>
             </div>}
         </div>
     );
