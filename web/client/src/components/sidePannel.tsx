@@ -26,7 +26,7 @@ const SidePannel = () => {
                     </button>
                 </div>
                 <Line color = '#6b7280'/>
-                {isPinnedExpand && <Member/>}
+                {isPinnedExpand && <Member image_url = {require("../assets/Alex-Kazakov.jpg")} name = "Teodor Madjarov"/>}
                 </div>
                 <div className = "flex flex-col">
                 <div className = "flex flex-row justify-between">
@@ -42,6 +42,8 @@ const SidePannel = () => {
                     </button>
                 </div>
                 <Line color ="#6b7280"/>
+                {isGroupsExpand && <Member image_url = {require("../assets/Alex-Kazakov.jpg")} name = "Ivan Dochev"/>}
+                
                 </div>
                 <div className = "flex flex-col">
                 <div className = "flex flex-row justify-between">
@@ -57,6 +59,7 @@ const SidePannel = () => {
                     </button>
                 </div>
                 <Line color = "#6b7280"/>
+                {isConnectionsExpand && <Member image_url = {require("../assets/Alex-Kazakov.jpg")} name = "Alex Kazakov"/>}
                 </div>
             </div>
             <div>
