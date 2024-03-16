@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Line from '../components/line';
-import { FaArrowRight } from "react-icons/fa";
-import SidePannel from '../components/sidePannel';
+import { IoSend } from "react-icons/io5";
+import SidePanel from '../components/sidePanel';
 import CirclePhoto from '../components/circlePhoto';
 import { useLocation } from "react-router-dom";
 
@@ -15,14 +15,14 @@ const MainApp: React.FC = () =>{
     });
     return (  
         <div className = "flex flex-row bg-gradient-to-b from-sky-700 to-sky-500">
-                <SidePannel username={user.username}/>
+                <SidePanel username={user.username}/>
             {!isChatting && 
             <div className = "flex flex-col bg-white mx-auto my-auto p-44 rounded-xl items-center font-sans text-gray-500 font-bold">
                     <h1>No Chats</h1>
                     <p>Select a conversation to start</p>
             </div>}
             {isChatting && 
-            <div className = "flex flex-col bg-white w-full ml-0.5 justify-between">
+            <div className = "flex flex-col bg-gradient-to-b from-sky-300 to-indigo-400 w-full ml-0.5 justify-between">
                 <div className = "flex flex-col justify-start p-3">
                     <div className = "flex flex-row items-center mb-1">
                         <CirclePhoto image_url = {photoURL} size = {50} className = "mr-4 text-green-400"/>
@@ -30,9 +30,9 @@ const MainApp: React.FC = () =>{
                     </div>
                     <Line color = "black"/>
                 </div>
-                <div className = "p-4">
+                <div className = "p-4 flex flex-row justify-center">
                     <input className = "bg-gray-200 w-11/12 py-2 outline-none rounded-xl px-3" placeholder='Type a message...'></input>
-                    <button className = "ml-7 rounded-2xl bg-sky-400 px-4 py-2" type = "submit"><FaArrowRight/></button>
+                    <button className = "ml-5 rounded-2xl bg-sky-400 px-5 py-2 " type = "submit"> <IoSend color='white' size = "20px"/> </button>
                 </div>
             </div>}
         </div>

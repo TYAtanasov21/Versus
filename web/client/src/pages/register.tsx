@@ -56,7 +56,7 @@ export default function Register() {
 
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-cyan-500 to-indigo-500">
     <div className="max-w-md w-full rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-neutral-900 dark:bg-black">
       <h2 className="font-bold text-xl text-neutral-200 dark:text-neutral-200">
         Register
@@ -117,7 +117,7 @@ export default function Register() {
           </Label>
         </div> */}
         <button
-          className="bg-gradient-to-br relative group/btn block bg-zinc-900 w-full text-white rounded-md h-10 font-medium "
+          className="relative group/btn block bg-zinc-900 w-full text-white rounded-md h-10 font-medium "
           type="submit"
           onClick={sendData}
         >

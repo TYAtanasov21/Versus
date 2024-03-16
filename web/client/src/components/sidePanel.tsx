@@ -4,11 +4,11 @@ import { FaChevronLeft, FaChevronDown } from "react-icons/fa6";
 import CirclePhoto from './circlePhoto';
 import Member from './member';
 import Group from './group'
-interface SidePannelProps {
+interface SidePanelProps {
     username: string;
 }
 
-const SidePannel:React.FC<SidePannelProps> = ({username}) => {
+const SidePanel:React.FC<SidePanelProps> = ({username}) => {
     const [isPinnedExpand, setIsPinnedExpand] = useState(false);
     const [isGroupsExpand, setIsGroupsExpand] = useState(false);
     const [isConnectionsExpand, setIsConnectionExpand] = useState(false);
@@ -83,4 +83,4 @@ const SidePannel:React.FC<SidePannelProps> = ({username}) => {
     );
 }
 
-export default SidePannel;
+export default SidePanel;
