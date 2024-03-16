@@ -20,7 +20,6 @@ const LandingPage: React.FC = () => {
                     >
                         CHAT NOW
                     </button>
-
                     <button
                     className = "px-9 py-2 text-indigo-300 rounded-3xl ml-10 outline font-extrabold font-sans"
                     onClick = {() => {navigate('/SignIn')}}

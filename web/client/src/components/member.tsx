@@ -2,7 +2,6 @@ import React from 'react'
 import CirclePhoto from './circlePhoto';
 import Line from './line';
 import { AiFillPushpin } from "react-icons/ai";
-import { AiOutlinePushpin } from "react-icons/ai";
 import { LuSend } from "react-icons/lu";
 
 interface MemberProps {

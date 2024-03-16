@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import Line from '../components/line';
-import { FaChevronLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
 import SidePannel from '../components/sidePannel';
 import CirclePhoto from '../components/circlePhoto';
 import { useLocation } from "react-router-dom";
-import axios from "axios";
 
 const MainApp: React.FC = () =>{
     const [isChatting, setIsChatting] = useState(true);
@@ -16,7 +14,7 @@ const MainApp: React.FC = () =>{
         console.log(user.username, typeof (user.username));
     });
     return (  
-        <div className = "flex flex-row">
+        <div className = "flex flex-row bg-gradient-to-b from-sky-700 to-sky-500">
                 <SidePannel username={user.username}/>
             {!isChatting && 
             <div className = "flex flex-col bg-white mx-auto my-auto p-44 rounded-xl items-center font-sans text-gray-500 font-bold">

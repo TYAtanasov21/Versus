@@ -3,7 +3,7 @@ import Line from './line';
 import { FaChevronLeft, FaChevronDown } from "react-icons/fa6";
 import CirclePhoto from './circlePhoto';
 import Member from './member';
-
+import Group from './group'
 interface SidePannelProps {
     username: string;
 }
@@ -47,8 +47,7 @@ const SidePannel:React.FC<SidePannelProps> = ({username}) => {
                     </button>
                 </div>
                 <Line color ="#6b7280"/>
-                {isGroupsExpand && <Member image_url = {require("../assets/Alex-Kazakov.jpg")} name = "Ivan Dochev"/>}
-                
+                {isGroupsExpand && <Group group_name='Family' count_of_users={5} />}
                 </div>
                 <div className = "flex flex-col">
                 <div className = "flex flex-row justify-between">
