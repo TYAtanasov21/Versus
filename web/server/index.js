@@ -4,6 +4,7 @@ import cors from "cors";
 import pgk from "pg";
 import { TextAnalyticsClient, AzureKeyCredential } from '@azure/ai-text-analytics';
 import userRoute from "./routes/userRoute.js";
+import MLRoute from "./routes/MLRoute.js";
 
     
 const {Pool} = pgk;
@@ -31,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use("/user", userRoute);
-
+app.use("/ML", MLRoute);
 
 app.post('/analyzeText', async (req, res) => {
     const { text } = req.body;
