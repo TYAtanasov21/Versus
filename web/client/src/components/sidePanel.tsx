@@ -31,7 +31,9 @@ const SidePanel:React.FC<SidePanelProps> = ({username}) => {
                     </button>
                 </div>
                 <Line color = '#6b7280'/>
-                {isPinnedExpand && <Member image_url = {require("../assets/Alex-Kazakov.jpg")} name = "Teodor Madjarov"/>}
+                {isPinnedExpand && <Member image_url = {require("../assets/Alex-Kazakov.jpg")} name = "Alex Kazakov" isConnection={false}/>}
+                {isPinnedExpand && <Member image_url = {require("../assets/Teodor-Madjarov.jpg")} name = "Teodor Madjarov" isConnection={false}/>}
+                {isPinnedExpand && <Member image_url = {require("../assets/Boyan-Kyovtorov.jpg")} name = "Boyan Kyovtorov" isConnection={false}/>}
                 </div>
                 <div className = "flex flex-col">
                 <div className = "flex flex-row justify-between">
@@ -63,7 +65,10 @@ const SidePanel:React.FC<SidePanelProps> = ({username}) => {
                     </button>
                 </div>
                 <Line color = "#6b7280"/>
-                {isConnectionsExpand && <Member image_url = {require("../assets/Alex-Kazakov.jpg")} name = "Alex Kazakov"/>}
+                {isConnectionsExpand && <Member image_url = {require("../assets/Alex-Kazakov.jpg")} name = "Alex Kazakov" isConnection={true}/>}
+                {isConnectionsExpand && <Member image_url = {require("../assets/Teodor-Madjarov.jpg")} name = "Teodor Madjarov" isConnection={true}/>}
+                {isConnectionsExpand && <Member image_url = {require("../assets/Boyan-Kyovtorov.jpg")} name = "Boyan Kyovtorov" isConnection={true}/>}
+                {isConnectionsExpand && <Member image_url = {require("../assets/Ivan-Dochev.jpg")} name = "Ivan Dochev" isConnection={true}/>}
                 </div>
             </div>
             <div>

@@ -3,13 +3,15 @@ import CirclePhoto from './circlePhoto';
 import Line from './line';
 import { AiFillPushpin } from "react-icons/ai";
 import { LuSend } from "react-icons/lu";
+import { AiOutlinePushpin } from "react-icons/ai";
 
 interface MemberProps {
     name : string;
     image_url: string;
+    isConnection: boolean;
 }
 
-const Member: React.FC <MemberProps> = ({name, image_url}) => {
+const Member: React.FC <MemberProps> = ({name, image_url, isConnection}) => {
     return (
         <div className='flex flex-col'>
             <div className = "flex flex-row justify-between p-2">
@@ -23,7 +25,9 @@ const Member: React.FC <MemberProps> = ({name, image_url}) => {
                 <div className = "flex flex-row items-center justify-center">
                     <button
                     className = "mr-0.5"
-                    ><AiFillPushpin size = "33px"/></button>
+                    >
+                        {isConnection ? <AiOutlinePushpin size = "33px"/> : <AiFillPushpin size = "33px"/>}
+                    </button>
                     <button><LuSend size = "33px"/></button>
                 </div>
             </div>
