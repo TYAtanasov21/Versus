@@ -6,7 +6,6 @@ import { TextAnalyticsClient, AzureKeyCredential } from '@azure/ai-text-analytic
 import userRoute from "./routes/userRoute.js";
 import MLRoute from "./routes/MLRoute.js";
 
-    
 const {Pool} = pgk;
 
 
@@ -18,8 +17,6 @@ const pool = new Pool({
     port: 5432,
     ssl: true,
 });
-
-
 
 const app = express();
 const PORT = process.env.PORT || 3001;

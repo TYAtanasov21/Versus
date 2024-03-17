@@ -1,31 +1,10 @@
 <h1 align="center">Versus<h1>
 
-<div align="center"> <img src="resources/logo.png" alt="Versus logo" /> </div>
+<div align="center"> <img src="./web/client/src/assets/versus_logo_white.png" alt="Versus logo" align = "center" width="40%"/> </div>
 
-## 📋 Table of contents
-  - [Description](#description)
-  - [Documentation](#docs)
-  - [How to run](#install)
-  - [Technologies](#technologies)
-
-  - ## 🔍 Description <a name="description"></a>
-<p> In a world of online negativity, be part of the solution with our innovative chat application. Featuring AI technology, it actively promotes respectful dialogue by swiftly identifying offensive language, helping to cultivate a kinder online community.. </p>
-
-[Team Documentation](https://github.com/TYAtanasov21/Versus/docs/Versus_Documentation.docx)
-
-### QA Documentation
-[Team Documentation](https://github.com/TYAtanasov21/Versus/docs/Versus_QA_Documentation.xslx)
   
-
-### Presentation
-[Presentation](https://github.com/TYAtanasov21/Versus/docs/Versus_Presentation.pptx)
-
-## 🚀 How to run <a name="install"></a>
-### Download the project
-`git clone https://github.com/TYAtanasov21/Versus.git`
-### run npm from the client folder
-`npm install` <br>
-`npm start`
+<h2>📥 Installation </h2>
+<p>In your browser paste the url below<pre>https://versus-ai.vercel.app/</pre></p>
 
 ## 🖥️ Technologies used <a name="technologies"></a>
 ### IDE & version control system:
@@ -53,4 +32,4 @@
 <a href="https://www.microsoft.com/en-ww/microsoft-365/powerpoint"><img src="https://1000logos.net/wp-content/uploads/2020/08/Microsoft-PowerPoint-Logo.png" height="60"/></a>
 <a href="https://www.microsoft.com/en-ww/microsoft-365/excel"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/1101px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png" alt="Excel Icon" height="60"/></a> 
 
-# Thank you for checking out our repo! If you had a good time you can leave us a ⭐!
+<h1 align="center">Thank you for checking out our repo! If you had a good time you can leave us a ⭐!</h1>
