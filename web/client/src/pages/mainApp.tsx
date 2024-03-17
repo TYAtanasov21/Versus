@@ -58,10 +58,17 @@ const MainApp: React.FC = () =>{
                         <div>
                             {messages.map((message, index) => (
                                 <div key={index} className="flex flex-col text-end mx-auto mr-0 w-fit">
+                                    {message != "This message has been flagged as cyberbullying." ?
                                     <div className="flex flex-row bg-blue-600 p-2 rounded-2xl mb-1 font-sans text-white px-4 items-center">
                                         {message}
                                         <IoCheckmarkDoneOutline className='ml-3'/>
                                     </div>
+                                    :
+                                    <div className="flex flex-row bg-red-600 p-2 rounded-2xl mb-1 font-sans text-white px-4 items-center">
+                                        {message}
+                                        <IoCheckmarkDoneOutline className='ml-3'/>
+                                    </div>
+                                    }
                                 </div>
                             ))}
                         </div>
