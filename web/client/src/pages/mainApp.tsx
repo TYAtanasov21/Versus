@@ -33,8 +33,8 @@ const MainApp: React.FC = () => {
   const sendMessage = async () => {
     const tempMessage = messageDraft;
     setMessageDraft('');
-    const response = await axios.post('http://localhost:3001/ML/checkMessage', {
-      message: tempMessage,
+    const response = await axios.post('https://versus-server.vercel.app/ML/checkMessage', {
+      message: tempMessage, 
     });
 
     if (response.data.isBullying === false) {
