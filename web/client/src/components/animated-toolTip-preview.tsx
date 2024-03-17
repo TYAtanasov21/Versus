@@ -5,7 +5,7 @@ const people = [
     id: 1,
     name: "Alex Kazakov",
     designation: "Backend developer",
-    image: require("../assets/Alex-Kazakov.png"),
+    image: require("../assets/Alex-Kazakov.jpg"),
   },
   {
     id: 2,
