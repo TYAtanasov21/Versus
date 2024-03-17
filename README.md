@@ -5,7 +5,8 @@
   
 <h2>📥 Installation </h2>
 <p>In your browser paste the url below<pre>https://versus-ai.vercel.app/</pre></p>
-
+<h1>Dataset</h1>
+<pre>https://www.kaggle.com/datasets/andrewmvd/cyberbullying-classification</pre>
 ## 🖥️ Technologies used <a name="technologies"></a>
 ### IDE & version control system:
 <a href="https://code.visualstudio.com/"><img src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_vscode_icon_130084.png" alt="Visual studio code" height="60"/></a> 

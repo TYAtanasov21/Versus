@@ -67,7 +67,7 @@ const MainApp: React.FC = () => {
       )}
       {isChatting && (
         <div className="flex flex-col bg-gradient-to-b from-sky-300 to-indigo-400 w-full ml-0.5 justify-between">
-          <div className="flex flex-col justify-start p-3" style={{ overflow: 'visible' }}>
+          <div className="flex flex-col justify-start p-3">
             <div className="flex flex-row items-center mb-1">
               <CirclePhoto image_url={require('../assets/Ivan-Dochev.jpg')} size={50} className="mr-4 text-green-400" />
               <h1 className="font-serif font-bold text-xl">Ivan Dochev</h1>

@@ -15,7 +15,7 @@ const SidePanel:React.FC<SidePanelProps> = ({username}) => {
     const photoURL = `https://api.dicebear.com/7.x/initials/svg?seed=${username}`;
 
     return (
-    <div className = "lg:basis-1/3 md:basis-1/4 bg-white h-screen outline text-black flex flex-col justify-between ">
+    <div className = "lg:basis-1/3 md:basis-1/4 bg-white h-screen outline text-black flex flex-col justify-between">
         <div>
             <div className = "flex flex-col justify-between">
                 <div className = "flex flex-row justify-between">

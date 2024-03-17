@@ -2,7 +2,6 @@ import React from "react";
 import Footer from "../components/footer";
 import TopBar from "../components/topBar";
 import { useNavigate } from 'react-router-dom';
-import "../styles/scrollbar.css"
 
 const LandingPage: React.FC = () => {
     const navigate = useNavigate();
@@ -50,6 +49,7 @@ const LandingPage: React.FC = () => {
                 </div>
             </div>
             <Footer/>
+            
         </div>
     );
 }
