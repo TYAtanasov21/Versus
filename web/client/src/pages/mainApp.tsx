@@ -5,6 +5,7 @@ import SidePanel from '../components/sidePanel';
 import CirclePhoto from '../components/circlePhoto';
 import { useLocation } from "react-router-dom";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
+import axios from 'axios';
 
 const MainApp: React.FC = () =>{
     const [isChatting, setIsChatting] = useState(true);
@@ -19,12 +20,20 @@ const MainApp: React.FC = () =>{
         console.log(messageDraft);
     };
 
-    const handleSendClick = () => {
-        if (messageDraft.trim() !== '') {
-            setMessages([...messages, messageDraft]);
-            setMessageDraft('');
+    const handleSendClick = async () => {
+        const tempMessage = messageDraft;
+        setMessageDraft('');
+        const response = await axios.post("http://localhost:3001/ML/checkMessage", {message: tempMessage});
+        console.log(response.data, tempMessage);
+
+        if(response.data.isBullying == false){
+            if (messageDraft.trim() !== '') {
+                setMessages([...messages, tempMessage]);
+                setMessageDraft('');
+            }
         }
-    }
+        else setMessages([...messages, "This message has been flagged as cyberbullying."]);
+        }
 
 
     useEffect(()=>{
